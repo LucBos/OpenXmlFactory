@@ -1,0 +1,7 @@
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\bin\Debug\OpenXmlFactory.dll
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\bin\Debug\OpenXmlFactory.pdb
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
