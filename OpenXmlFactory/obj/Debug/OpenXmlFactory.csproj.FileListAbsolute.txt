@@ -1,5 +1,0 @@
-c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\OpenXmlFactory\bin\Debug\OpenXmlFactory.dll
-c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\OpenXmlFactory\bin\Debug\OpenXmlFactory.pdb
-c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\OpenXmlFactory\obj\Debug\ResolveAssemblyReference.cache
-c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\OpenXmlFactory\obj\Debug\OpenXmlFactory.dll
-c:\users\bos\documents\visual studio 2010\Projects\OpenXmlFactory\OpenXmlFactory\obj\Debug\OpenXmlFactory.pdb

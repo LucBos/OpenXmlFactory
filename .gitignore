@@ -3,3 +3,6 @@
 ################################################################################
 
 *.suo
+/packages/*
+/OpenXmlFactory/bin/Debug/DocumentFormat.OpenXml.xml
+/OpenXmlFactory/bin/Debug/DocumentFormat.OpenXml.dll
