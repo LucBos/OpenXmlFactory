@@ -9,5 +9,5 @@ DocumentFormat.OpenXml.xml
 DocumentFormat.OpenXml.dll
 *.DS_Store
 *.pdb
-bin/Debug/
+Debug/
 obj/
