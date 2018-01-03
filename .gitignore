@@ -4,11 +4,9 @@
 
 *.suo
 /packages/*
-/OpenXmlFactory/bin/Debug/DocumentFormat.OpenXml.xml
-/OpenXmlFactory/bin/Debug/DocumentFormat.OpenXml.dll
 *.user
-/OpenXmlFactory/bin/Release/DocumentFormat.OpenXml.xml
-/OpenXmlFactory/bin/Release/DocumentFormat.OpenXml.dll
+DocumentFormat.OpenXml.xml
+DocumentFormat.OpenXml.dll
 *.DS_Store
 *.pdb
 bin/Debug/
