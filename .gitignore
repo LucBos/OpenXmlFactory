@@ -9,3 +9,7 @@
 *.user
 /OpenXmlFactory/bin/Release/DocumentFormat.OpenXml.xml
 /OpenXmlFactory/bin/Release/DocumentFormat.OpenXml.dll
+*.DS_Store
+*.pdb
+bin/Debug/
+obj/
