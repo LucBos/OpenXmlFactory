@@ -1,13 +1,16 @@
-using System;
-using System.Xml.Serialization;
-
 namespace OpenXmlFactory
 {
+    using System;
+    using System.Globalization;
+    using System.Xml.Serialization;
+
     [Serializable]
     public class Tag
     {
         public string Name { get; set; }
+
         public string Namespace { get; set; }
+
         public string TypeName { get; set; }
 
         [XmlIgnore]
@@ -15,7 +18,7 @@ namespace OpenXmlFactory
 
         public override string ToString()
         {
-            return string.Format("{0}:{1}", Namespace, Name);
+            return string.Format(CultureInfo.InvariantCulture, "{0}:{1}", Namespace, Name);
         }
     }
 }

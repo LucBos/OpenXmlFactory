@@ -1,49 +1,50 @@
-﻿using System;
-using System.Linq;
-using DocumentFormat.OpenXml;
-
-namespace OpenXmlFactory
+﻿namespace OpenXmlFactory
 {
+    using System;
+    using System.Linq;
+    using DocumentFormat.OpenXml;
+
     public class OpenXmlElementReconstructor
     {
-        private readonly IOuterXmlExtractor _outerXmlExtractor;
-        private readonly IOpenXmlElementByReflectionBuilder _reflectionBuilder;
+        private readonly IOuterXmlExtractor outerXmlExtractor;
+        private readonly IOpenXmlElementByReflectionBuilder reflectionBuilder;
 
         public OpenXmlElementReconstructor()
             : this(new OuterXmlExtractor(), new OpenXmlElementByReflectionBuilder())
         {
-
         }
 
         public OpenXmlElementReconstructor(IOuterXmlExtractor outerXmlExtractor, IOpenXmlElementByReflectionBuilder reflectionBuilder)
         {
-            _outerXmlExtractor = outerXmlExtractor;
-            _reflectionBuilder = reflectionBuilder;
+            this.outerXmlExtractor = outerXmlExtractor;
+            this.reflectionBuilder = reflectionBuilder;
         }
 
         public OpenXmlElement Reconstruct(string outerXml)
         {
-            var ns = _outerXmlExtractor.ExtractNamespace(outerXml);
-            var tagName = _outerXmlExtractor.ExtractTagName(outerXml);
+            var ns = outerXmlExtractor.ExtractNamespace(outerXml);
+            var tagName = outerXmlExtractor.ExtractTagName(outerXml);
 
             var type = GetTypeOfTag(ns, tagName);
 
             if (type == null)
+            {
                 return new OpenXmlUnknownElement("unknown");
+            }
 
-            var element = _reflectionBuilder.ConstructType(type, outerXml);
+            var element = reflectionBuilder.ConstructType(type, outerXml);
 
             return element;
         }
 
-        private Type GetTypeOfTag(string ns, string tagName)
+        private static Type GetTypeOfTag(string ns, string tagName)
         {
             var tagNamesByType = new OpenXmlTagExtractor().GetTagNamesByType();
-            var tag = tagNamesByType.FirstOrDefault(x => x.Namespace.Equals(ns) && x.Name.Equals(tagName));
+            var tag = tagNamesByType.FirstOrDefault(x => x.Namespace.Equals(ns, StringComparison.OrdinalIgnoreCase) && x.Name.Equals(tagName, StringComparison.OrdinalIgnoreCase));
 
             if (tag != null)
             {
-                return typeof (OpenXmlElement).Assembly.GetType(tag.TypeName);
+                return typeof(OpenXmlElement).Assembly.GetType(tag.TypeName);
             }
 
             return null;
