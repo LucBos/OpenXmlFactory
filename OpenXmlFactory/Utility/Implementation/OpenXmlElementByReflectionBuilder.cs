@@ -5,8 +5,17 @@ namespace OpenXmlFactory
     using System.Reflection;
     using DocumentFormat.OpenXml;
 
+    /// <summary>
+    /// Constructs <see cref="OpenXmlElement"/> instances from XML using relfection.
+    /// </summary>
     public class OpenXmlElementByReflectionBuilder : IOpenXmlElementByReflectionBuilder
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenXmlElement"/> class of a given type from specified XML.
+        /// </summary>
+        /// <param name="type">The type of element to construct.</param>
+        /// <param name="outerXml">The XML which defines the element.</param>
+        /// <returns>A <see cref="OpenXmlElement"/> constructed from the XML.</returns>
         public OpenXmlElement ConstructType(Type type, string outerXml)
         {
             if (type == null)
@@ -25,13 +34,8 @@ namespace OpenXmlFactory
             return defaultConstructor.Invoke(null) as OpenXmlElement;
         }
 
-        public ConstructorInfo GetOuterXmlConstructor(Type type)
+        private ConstructorInfo GetOuterXmlConstructor(Type type)
         {
-            if (type == null)
-            {
-                throw new ArgumentNullException(nameof(type));
-            }
-
             var constructors = type.GetConstructors();
 
             var constructorWithOuterXml =

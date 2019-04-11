@@ -5,8 +5,15 @@ namespace OpenXmlFactory
     using System.Linq;
     using DocumentFormat.OpenXml;
 
+    /// <summary>
+    /// Searches an assembly for Open XML elements.
+    /// </summary>
     public class OpenXmlAssemblySearcher : IOpenXmlAssemblySearcher
     {
+        /// <summary>
+        /// Returns a list of Open XML element types.
+        /// </summary>
+        /// <returns>A <see cref="IEnumerable{Type}"/> containing all Open XML elements.</returns>
         public IEnumerable<Type> GetAllSubclassesOfOpenXmlElement()
         {
             var parentClass = typeof(OpenXmlElement);
