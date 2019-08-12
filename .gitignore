@@ -10,4 +10,6 @@ DocumentFormat.OpenXml.dll
 *.DS_Store
 *.pdb
 Debug/
+Release/
 obj/
+.vs/
